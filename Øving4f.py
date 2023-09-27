@@ -10,7 +10,7 @@ def finn_sekvens(liste):
     midlertidig_resultat = 0
     for i in range(len(liste)):
         sjekk = liste[i]
-        if liste.index(liste[i]) != len(liste):
+        if float(liste.index(liste[i])) != float(len(liste-1)):
             if liste[i] == liste[i+1]:
                 resultat += 1
             else:
@@ -34,5 +34,5 @@ def finn_sekvens(liste):
 liste = [1,1,2,2,2,3]
 print(finn_sekvens(liste))
 
-
+print(len(liste))
 
