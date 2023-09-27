@@ -4,11 +4,6 @@ Created on Sun Sep 24 15:19:19 2023
 
 @author: Mhodne
 """
-#x-kordinater
-list1 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
-#y-kordianter 
-list2 = [1, 4, 6, 7, 9, 13, 14, 22, 24, 25]
-
 
 def trend(x, y):
     #Finding the average values for the x and y lists.
@@ -29,10 +24,16 @@ def trend(x, y):
     b = round(y_average - a * x_average, 4)
      
     return a, b
-                   
-a, b = trend(list1, list2)
-print(f"The slope number is {a}")
-print(f"The intersect value is {b}")
+
+
+if __name__ == "__main__":
+    #x-coordinates
+    list1 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+    #y-coordinates
+    list2 = [1, 4, 6, 7, 9, 13, 14, 22, 24, 25]                   
+    a, b = trend(list1, list2)
+    print(f"The slope number is {a}")
+    print(f"The intersect value is {b}")
 
 
 
