@@ -30,9 +30,9 @@ def finn_sekvens(liste):
                 return
     return midlertidig_resultat
 
+if __name__ == "__main__":
+    liste = [1,1,2,2,2,3]
+    print(finn_sekvens(liste))
 
-liste = [1,1,2,2,2,3]
-print(finn_sekvens(liste))
-
-print(len(liste))
+    print(len(liste))
 
