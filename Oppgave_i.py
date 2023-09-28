@@ -4,34 +4,16 @@ Created on Wed Sep 27 21:42:50 2023
 
 @author: IsakJ
 """
+# Import function from Oppgave d and the list "temperaturer" from "lister til del 1"
+from Oppgave_d import ant_str
+from lister_for_del_1 import temperaturer
 
-'''
-Henter inn funksjonen fra oppgave d
-'''
-def ant_str(liste, tall):
-    resultat = 0
-    for i in range(len(liste)):
-        liste_float = float(liste[i])
-        if liste_float >= tall:
-            resultat += 1
-        else: 
-            continue
-    return resultat
+# Use the function ant_str to calculate the ammount of days with a max temp
+# over 20, 25 and 30 degrees, and then print the answers.
+sommerdager = ant_str(temperaturer, 21)
+hoysommerdager = ant_str(temperaturer, 26)
+tropedager = ant_str(temperaturer, 31)
 
-if __name__ == "__main__":
-    '''
-    Henter inn listen temperaturer fra "lister for del 1"
-    '''
-    temperaturer = [-5, 2, 6, 13, 9, 22, 28, 19, 24, 12, 5, 1, -3, -8, 2, 8, 15, 18, 21, 26, 21, 31, 15, 4, 1, -2]
-
-    '''
-    Bruker funksjonen til å regne ut antall sommerdager, høysommerdager og tropedager.
-    Deretter printer vi svarene.
-    '''
-    sommerdager = ant_str(temperaturer, 21)
-    hoysommerdager = ant_str(temperaturer, 26)
-    tropedager = ant_str(temperaturer, 31)
-
-    print(f'Det er {sommerdager} dager som kan kategoriseres som sommerdager.')
-    print(f'Det er {hoysommerdager} dager som kan kategoriseres som hoysommerdager.')
-    print(f'Det er {tropedager} dager som kan kategoriseres som tropedager.')
+print(f'Det er {sommerdager} dager som kan kategoriseres som sommerdager.')
+print(f'Det er {hoysommerdager} dager som kan kategoriseres som hoysommerdager.')
+print(f'Det er {tropedager} dager som kan kategoriseres som tropedager.')
