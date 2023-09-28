@@ -4,9 +4,7 @@ Created on Mon Sep 25 14:27:58 2023
 
 @author: IsakJ
 """
-
-#
-
+# Define a function that has a list as parameter, which can find the longest sequence in a list.
 def finn_sekvens(liste):
     resultat = 1
     ferdig_resultat = 0
