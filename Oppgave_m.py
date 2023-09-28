@@ -5,21 +5,10 @@ Created on Wed Sep 27 23:08:33 2023
 @author: IsakJ
 """
 
-'''
-Henter funksjonen fra oppgave f
-'''
-#Skal vær her
+# Import the function from Oppgave_f and the list "døgn-nedbør from "lister til del 1"
+from Oppgave_f import finn_sekvens
+from lister_for_del_1 import dogn_nedbor
 
-
-'''
-Henter lista "døgn-nedbør" fra lister til del 1
-'''
-dogn_nedbor = [2, 5, 0, 0, 0, 3, 6, 4, 0, 0, 5, 0, 12, 12, 12, 12, 7, 19]
-
-
-'''
-Bruker her funksjonen til å regne ut og printer deretter svaret.
-'''
+# Using the function to calculate the longest continous streak of days with rain. 
 max_periode_nedbør = finn_sekvens(dogn_nedbor)
-
 print(f'Den lengste perioden med nedbør hvær dag var på {max_periode_nedbør} dager.')
