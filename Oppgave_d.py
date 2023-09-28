@@ -19,9 +19,10 @@ def ant_str(liste, tall):
             continue
     return resultat
 
-#Legger inn en liste og en input for tallet som en sjekker listen opp mot
-liste = [-5, 2, 6, 13, 9, 22, 28, 19, 24, 12, 5, 1, -3, -8, 2, 8, 15, 18, 21, 26, 21, 31, 15, 4, 1, -2]
-tall = float(input('Hvilket tall vil du sjekke listen opp mot? '))              
-#printer resultatet
-print(ant_str(liste, tall))
+if __name__ == "__main__":
+    #Legger inn en liste og en input for tallet som en sjekker listen opp mot
+    liste = [-5, 2, 6, 13, 9, 22, 28, 19, 24, 12, 5, 1, -3, -8, 2, 8, 15, 18, 21, 26, 21, 31, 15, 4, 1, -2]
+    tall = float(input('Hvilket tall vil du sjekke listen opp mot? '))              
+    #printer resultatet
+    print(ant_str(liste, tall))
 
