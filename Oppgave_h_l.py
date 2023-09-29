@@ -12,8 +12,7 @@ def growth(listname):
     for i in range(len(listname)):
         if listname[i] < 5:
             continue
-        else:
-            growing.append(listname[i] - 5)
-    return growing
+        growing.append(listname[i] - 5)
+    return sum(growing)
 
 print(growth(temperaturer))

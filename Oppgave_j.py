@@ -10,7 +10,7 @@ from Oppgave_e import diff
 
 temp_up_down = diff(temperaturer)
 
-for i in temp_up_down:
+for i in range(len(temp_up_down)):
     if temp_up_down[i] < 0:
         print(i)
         print("The temperature is decreasing.")

@@ -8,15 +8,12 @@ Created on Sun Sep 24 00:06:44 2023
 def diff(listname):
     #Makes a new list outside the loop
     newlist = []
-    i = 0
     #The loop runs for as many elements in the list.
-    for element in range(1, len(listname)):
+    for i in range(1,len(listname)):
             #Makes a new variabel thats the difference between one element and the element below in the list.
-            diff = int(listname[i+1]) - int(listname[i])
+            diff = int(listname[i]) - int(listname[i-1])
             #Puts the new element into the new list.
             newlist.append(diff)
-            #Adds 1 so that calculation moves one step up the list.
-            i += 1
     #Return the new list.
     return newlist
 

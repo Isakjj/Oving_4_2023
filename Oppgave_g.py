@@ -26,12 +26,19 @@ def trend(x, y):
     return a, b
 
 
+from matplotlib import pyplot as plt
+import numpy as np
+
 if __name__ == "__main__":
     #x-coordinates
     list1 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
     #y-coordinates
-    list2 = [1, 4, 6, 7, 9, 13, 14, 22, 24, 25]                   
+    list2 = [1, 4, 6, 7, 9, 13, 14, 22, 24, 25]    
+    plt.scatter(list1,list2)             
     a, b = trend(list1, list2)
+    x_akse=np.linspace(0,10)
+    y_akse=x_akse*a+b
+    plt.plot(x_akse,y_akse)
     print(f"The slope number is {a}")
     print(f"The intersect value is {b}")
 
