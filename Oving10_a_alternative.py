@@ -35,7 +35,9 @@ def check_snowdate(d):
             if season not in depth_dict:
                 depth_dict[season] = []
             depth_dict[season].append(d[depth][i])
-    return depth_dict
+    snow_days = [(key, [ant_str(value, 20)]) for key, value in depth_dict.items()]
+
+    return snow_days
         
     
 if __name__ == '__main__':
@@ -43,14 +45,9 @@ if __name__ == '__main__':
     d = read_file(filename)
     print(list(d.keys()))
     snowdate = check_snowdate(d)
+    print(snowdate)
 
-#specific_key = list(d.keys())
-#for i, key in enumerate(specific_key):
-#    print(key,": ", end="")
-#    print(d[key][10200])
 
-    
-#Task b)
-#Make a new list for each snow season
-#Add the 
-    
+#   for key in depth_dict:
+ #       snow_days[key] = []
+  #      snow_days[key].append(ant_str(depth_dict[key], 20))    
