@@ -12,33 +12,37 @@ def read_file(filename):
 
         #For the next lines, strip and split the lines.
         #Then for each value, assign it to the header in the same row.
-        for line in file:
+        lines = file.readlines()
+        for line in lines[:-1]:
             values = line.strip().split(';')
             for i, value in enumerate(values):
                 file_dict[header[i]].append(value)
                 
     return file_dict
 
-
+ 
 def check_snowdate(d):
     date = list(d.keys())[2]
     depth = list(d.keys())[3]
-    depth_list = []
+    depth_dict = {}
     print(date, depth)
-    for i in zip(d[date]):
-        check_date = datetime.strptime(i, '%d.%m.%Y')
-#        check_depth = j
-        if check_date.month <= 5 or check_date.month >= 10: 
-            
-            ant_str( ,20)
-
+    for i, date in enumerate(d[date]):
+        check_date = datetime.strptime(date, '%d.%m.%Y')
+        if check_date.month <= 5 or check_date.month >= 10:
+            season_start_year = check_date.year
+            season_end_year = check_date.year + 1
+            season = f"Season {season_start_year}-{season_end_year}"
+            if season not in depth_dict:
+                depth_dict[season] = []
+            depth_dict[season].append(d[depth][i])
+    return depth_dict
         
     
 if __name__ == '__main__':
     filename = "snoedybder_vaer_en_stasjon_dogn.csv"
     d = read_file(filename)
     print(list(d.keys()))
-    check_snowdate(d)
+    snowdate = check_snowdate(d)
 
 #specific_key = list(d.keys())
 #for i, key in enumerate(specific_key):
