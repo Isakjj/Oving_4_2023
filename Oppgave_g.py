@@ -4,6 +4,9 @@ Created on Sun Sep 24 15:19:19 2023
 
 @author: Mhodne
 """
+from matplotlib import pyplot as plt
+import numpy as np
+
 
 def trend(x, y):
     #Finding the average values for the x and y lists.
@@ -26,8 +29,7 @@ def trend(x, y):
     return a, b
 
 
-from matplotlib import pyplot as plt
-import numpy as np
+
 
 if __name__ == "__main__":
     #x-coordinates
@@ -39,6 +41,7 @@ if __name__ == "__main__":
     x_akse=np.linspace(0,10)
     y_akse=x_akse*a+b
     plt.plot(x_akse,y_akse)
+    plt.show()
     print(f"The slope number is {a}")
     print(f"The intersect value is {b}")
 
