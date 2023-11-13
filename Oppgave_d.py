@@ -12,10 +12,13 @@ Created on Wed Sep 20 13:59:30 2023
 def ant_str(liste, tall):
     resultat = 0
     for i in range(len(liste)):
-        liste_float = float(liste[i])
-        if liste_float >= tall:
-            resultat += 1
-        else: 
+        try:
+            liste_float = float(liste[i])
+            if liste_float >= tall:
+                resultat += 1
+            else: 
+                continue
+        except ValueError:
             continue
     return resultat
 
