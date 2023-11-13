@@ -22,7 +22,7 @@ def check_snowdate(d):
                 season_dict[season] = []
             season_dict[season].append(d[depth][i])
     #Make a list of tuples with the season as the key and the depth as the value.
-    snow_days = [(key, [ant_str(value, 20)]) for key, value in season_dict.items()]
+    snow_days = [(key, [ant_str(value, 20)]) for key, value in season_dict]
 
     return snow_days
 
@@ -33,7 +33,7 @@ if __name__ == '__main__':
     test = check_snowdate(read_file("snoedybder_vaer_en_stasjon_dogn.csv"))
     print(test[1][0])   
     print(test[1][1])
-    
+
 #   for key in depth_dict:
 #      snow_days[key] = []
 #      snow_days[key].append(ant_str(depth_dict[key], 20))   
