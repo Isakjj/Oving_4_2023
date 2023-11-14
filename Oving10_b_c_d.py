@@ -28,17 +28,20 @@ def check_snowdate(d):
             season_dict[season].append(d[depth][i])
     #Makes a list for the snow days that you get from the ant_str function.
     #And a list for the seasons.
-    season_list = []
+    start_year_list = []
     snow_days_list = []
     for key in season_dict:
-        snow_days_list.append(ant_str(season_dict[key], 20))
-        season_list.append(key)
+        if len(season_dict[key]) >= 200:
+            snow_days_list.append(ant_str(season_dict[key], 20))
+            start_year_list.append(key)
 
-    return season_list, snow_days_list
+    return start_year_list, snow_days_list
 
 if __name__ == '__main__':
-    a, b = check_snowdate(read_file("snoedybder_vaer_en_stasjon_dogn.csv"))
-    plt.scatter(a, b)             
+    a, b= check_snowdate(read_file("snoedybder_vaer_en_stasjon_dogn.csv"))
+    print(a)
+    print(b)
+    plt.plot(a, b)             
     x, y = trend(a, b)
     plt.xticks(np.arange(a[0], a[-1]+1, 1))
     plt.xlim(a[0]-1, a[-1]+1)
@@ -47,7 +50,6 @@ if __name__ == '__main__':
     y_akse = x_akse*x+y
     plt.plot(x_akse, y_akse)
     plt.show()
-    print(b)
 
 #   for key in depth_dict:
 #      snow_days[key] = []
