@@ -15,4 +15,5 @@ def growth(listname):
         growing.append(listname[i] - 5)
     return sum(growing)
 
-print(growth(temperaturer))
+if __name__ == '__main__':
+    print(growth(temperaturer))
