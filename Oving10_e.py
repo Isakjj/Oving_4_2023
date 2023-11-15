@@ -1,31 +1,40 @@
 from Oppgave_h_l import growth
-from Oving10_a import vaerstasjon_data
+from Oving10_a_alternative import read_file
 import datetime as dt
 
-data = vaerstasjon_data("snoedybder_vaer_en_stasjon_dogn.csv") # key 5 er middeltemp
+data = read_file("snoedybder_vaer_en_stasjon_dogn.csv") # key 5 er middeltemp
 
 def growth_per_year(data):
-    list_years = []
-    for i in range(len(data['Dato'])):
-        year = data['Dato'][i].year
-        if year not in list_years:
-            list_years[year] = []
-        list_years[year].append(data['Middeltemp'][i])
+    dict_years = {}
+    for i in range(len(data['Tid(norsk normaltid)'])):
+        tid_dt = dt.datetime.strptime(data['Tid(norsk normaltid)'][i], '%d.%m.%Y')  
+        year = tid_dt.year
+        if year not in dict_years:
+            dict_years[year] = []
+        dict_years[year].append(data['Middeltemperatur (døgn)'][i])
+
 
     list_eligible_years = []   
-    for year in list_years:
-        for i in list_years[year]:
-            check_list = []
-            if list_years[year][i] == None:
+    for j in dict_years:
+        check_list = []
+        for i in dict_years[j]:  
+            if i == None:
                 continue
             else:
-                check_list.append(list_years[year][i])
+                check_list.append(i)
         if len(check_list) >= 300:
-            list_eligible_years.append(list_years[year])
-    sum_growth = 0        
-    for i in list_eligible_years:
-        temp_growth = growth(list_years[i])
-        sum_growth += temp_growth
+            list_eligible_years.append(dict_years[j])
+    sum_growth = []       
+
+    for k in list_eligible_years:
+        liste_float_k = []
+        for i in k:
+            try:
+                liste_float_k.append(float(i.replace(',','.')))
+            except:
+                continue
+        growth_year = growth(liste_float_k)
+        sum_growth.append(growth_year)
     return sum_growth
 
 if __name__ == '__main__':
