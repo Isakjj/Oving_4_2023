@@ -1,5 +1,3 @@
-from Oppgave_d import ant_str
-from datetime import datetime
 
 
 def read_file(filename):
@@ -17,11 +15,9 @@ def read_file(filename):
                 file_dict[header[i]].append(value)
                 
     return file_dict
-     
+   
 if __name__ == '__main__':
     filename = "snoedybder_vaer_en_stasjon_dogn.csv"
     d = read_file(filename)
     print(list(d.keys()))
 
-
- 
