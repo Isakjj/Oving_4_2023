@@ -1,3 +1,4 @@
+import datetime as dt
 # Første linje i excelfila er navn på kolonnene 
 # hvordan får vi ignorert disse datapunktene?
 
@@ -16,13 +17,15 @@ def vaerstasjon_data(filnavn):
     # Open the file and split the lines into datapoints
     # Append the datapoints to the dictionary
     with open(filnavn, 'r') as fil:
+       fil.readline()
        for linje in fil:
            deler = linje.strip().split(';')
            navn, stasjonsID, dato, snodybde, nedbor, middeltemp, skydekke, middelvind = deler
 
            vaerdata['Navn'].append(navn)
            vaerdata['StasjonsID'].append(stasjonsID)
-           vaerdata['Dato'].append(dato)
+           dato_dt = dt.datetime.strptime(dato, '%d.%m.%Y')
+           vaerdata['Dato'].append(dato_dt)
            vaerdata['Snodybde (cm)'].append(snodybde if snodybde !='-' else None)
            vaerdata['Nedbor (mm)'].append(nedbor if nedbor !='-' else None)
            vaerdata['Middeltemp'].append(middeltemp if middeltemp !='-' else None)
