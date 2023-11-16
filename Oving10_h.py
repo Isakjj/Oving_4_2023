@@ -38,9 +38,18 @@ def finn_max_middelvind_per_aar(data, time_key, main_key, min_value):
 
 def finn_median_middelvind(data, time_key, main_key, min_value):
     bruksdata = find_eligible_years(data,time_key, main_key, min_value)
+    median_middelvind_per_aar = []
     for i in bruksdata:
-        i.sort()
-        if len(i) % 2 == 0:
-            median = 
-    return
-print(finn_max_middelvind_per_aar(data, 'Tid(norsk normaltid)', "Høyeste middelvind (døgn)", 300))
+        sort_list = i.sort()
+        if len(sort_list) % 2 == 0:
+            median =sort_list[len(sort_list)//2]
+        else:
+            median = (2*(sort_list[len(sort_list)//2-1]) / 2)
+        median_middelvind_per_aar.append(median)
+
+    return median_middelvind_per_aar
+
+
+if __name__ == "__main__":
+    print(finn_max_middelvind_per_aar(data, 'Tid(norsk normaltid)', "Høyeste middelvind (døgn)", 300))
+    print(finn_median_middelvind(data, 'Tid(norsk normaltid)', "Høyeste middelvind (døgn)", 300))
