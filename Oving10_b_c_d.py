@@ -1,6 +1,6 @@
 from datetime import datetime
 from Oppgave_d import ant_str
-from Oving10_a_alternative import read_file
+from Oving10_a_alt import read_file
 from Oppgave_g import trend
 from matplotlib import pyplot as plt
 import numpy as np
@@ -9,9 +9,13 @@ import numpy as np
 def check_snowdate(d):
     #Makes 2 variables, one for the date and one for the depth.
     #Makes a dictionary for the seasons that will contain seasons as key and snow days as value.
+    #Make a list for the start year of the season.
+    #Make a list for the snow days.
     date = list(d.keys())[2]
     depth = list(d.keys())[3]
     season_dict = {}
+    start_year_list = []
+    snow_days_list = []
     #Takes the date from the dictionary and makes it a datetime object.
     for i, date in enumerate(d[date]):
         check_date = datetime.strptime(date, '%d.%m.%Y')
@@ -26,10 +30,6 @@ def check_snowdate(d):
             if season not in season_dict:
                 season_dict[season] = []
             season_dict[season].append(d[depth][i])
-    #Makes a list for the snow days that you get from the ant_str function.
-    #And a list for the seasons.
-    start_year_list = []
-    snow_days_list = []
     for key in season_dict:
         if len(season_dict[key]) >= 200:
             snow_days_list.append(ant_str(season_dict[key], 20))
@@ -50,8 +50,3 @@ if __name__ == '__main__':
     y_akse = x_akse*x+y
     plt.plot(x_akse, y_akse)
     plt.show()
-
-#   for key in depth_dict:
-#      snow_days[key] = []
-#      snow_days[key].append(ant_str(depth_dict[key], 20))   
-# snow_days = [(key, [ant_str(value, 20)]) for key, value in season_dict.items()]
