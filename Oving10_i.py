@@ -27,7 +27,7 @@ def avg_temp():
     for key, value in avg_temp_dict.items():
         avg_temp_list.append(round(np.average(value),4))
     diff_temp_list.append(diff(avg_temp_list))
-    return(avg_temp_list, diff_temp_list, avg_temp_dict)
+    return avg_temp_list, diff_temp_list, list(avg_temp_dict.keys())
 
 
 if __name__ == '__main__':
