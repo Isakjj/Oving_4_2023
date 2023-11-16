@@ -1,6 +1,6 @@
 from datetime import datetime
 from Oppgave_d import ant_str
-from Oving10_a_alternative import read_file
+from Oving10_a_alt import read_file
 from Oppgave_g import trend
 from matplotlib import pyplot as plt
 import numpy as np

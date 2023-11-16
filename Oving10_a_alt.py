@@ -20,4 +20,3 @@ if __name__ == '__main__':
     filename = "snoedybder_vaer_en_stasjon_dogn.csv"
     d = read_file(filename)
     print(list(d.keys()))
-

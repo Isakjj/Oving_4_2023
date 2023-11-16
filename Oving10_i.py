@@ -1,5 +1,5 @@
 from Oppgave_e import diff
-from Oving10_a_alternative import read_file
+from Oving10_a_alt import read_file
 from datetime import datetime
 import numpy as np
 from matplotlib import pyplot as plt
