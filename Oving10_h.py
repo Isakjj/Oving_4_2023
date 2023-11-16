@@ -1,6 +1,6 @@
 #Vil heller ikke importere find eligible years her... idk koffer??
 #from find_eligible_years import find_eligible_years
-from Oving10_a_alternative import read_file
+from Oving10_a_alt import read_file
 import datetime as dt
 import matplotlib.pyplot as plt
 

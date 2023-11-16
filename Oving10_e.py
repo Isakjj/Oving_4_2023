@@ -1,5 +1,5 @@
 from Oppgave_h_l import growth
-from Oving10_a_alternative import read_file
+from Oving10_a_alt import read_file
 import datetime as dt
 
 data = read_file("snoedybder_vaer_en_stasjon_dogn.csv") # key 5 er middeltemp

@@ -1,5 +1,5 @@
 from Oppgave_f import finn_sekvens
-from Oving10_a_alternative import read_file
+from Oving10_a_alt import read_file
 from find_eligible_years import find_eligible_years
 import matplotlib.pyplot as plt
 import datetime as dt
